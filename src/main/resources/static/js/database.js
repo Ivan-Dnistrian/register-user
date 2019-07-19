@@ -84,24 +84,26 @@ $.ajax({
 елементи з списку товарів я їх запихаю в дівку а потім в лішку, аякс запит вище
 */
 $(".bottomButtonsr").on("click", function () {
+	var items = [];
+	var url = '';  // to fix
 
     $("#checkList div").each(function(){
         var target = $(this);
-         var list = $(this).data('li').text();
-         load_options(target, list);
+		items.push(target.text() || null);
     });
+	
+	console.log(items);
 
-    function load_options(target, list) {
-        $.ajax({
-            type: 'GET',
-            url: list
-        }).done(function(data){
+	$.ajax({
+		type: 'POST',
+		url: url,
+		data: items
+	}).done(function(data){
 
-            var json = jQuery.parseJSON( data );
-            console.log(data);
+		var json = jQuery.parseJSON( data );
+		console.log(data);
 
-        });
-    }
+	});
 });
 
 
