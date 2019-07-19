@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Кафешка</title>
+    <link rel="stylesheet" href="/css/mycss.css"></link>
+</head>
+<body>
+
+<div id="mainDiv">
+    <div class="checkBlock">
+        <div class="headers"> Чек </div>
+        <div id="checkNumb" class="headers"></div>
+
+        <ul id="checkList"> </ul>
+
+        <div id="summary"> Сума: </div>
+        <button class="bottomButtons bottomButtonsl"><b>Local</b></button>
+        <div class="bottomButtons bottomButtonsr"><b>Pay</b></div>
+    </div>
+
+    <div class="menuBlock">
+        <div class="headers">Меню</div>
+        <div id="menuNumb" class="headers"></div>
+
+        <ul id="buttons" >
+            <!--  <li class="dish"><a>1</a></li>
+              <li class="dish"><a>2</a></li>
+              <li class="dish"><a>3</a></li>
+              <li class="dish"><a>4</a></li>
+              <li class="dish"><a>5</a></li>
+              <li class="dish"><a>6</a></li>
+              <li class="dish"><a>7</a></li>
+              <li class="dish"><a>8</a></li>
+              <li class="dish"><a>9</a></li>
+              <li class="dish"><a>10</a></li>
+              <li class="dish"><a>11</a></li>
+              <li class="dish"><a>12</a></li>
+              <li class="dish"><a>13</a></li>
+              <li class="dish"><a>14</a></li>
+              <li class="dish"><a>15</a></li>
+              <li class="dish"><a>16</a></li>
+              <li class="dish"><a>17</a></li>
+              <li class="dish"><a>18</a></li>
+              <li class="dish"><a>19</a></li>
+              <li class="dish"><a>20</a></li>-->
+        </ul>
+    </div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+</div>
+<script type="text/javascript"﻿ src="/js/jquery.js"></script>
+<script type="text/javascript"﻿ src="/js/database.js"></script>
+
+</body>
+</html>
