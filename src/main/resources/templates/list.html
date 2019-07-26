@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
 >
 <meta charset="utf-8"/>
 <body>
@@ -21,13 +21,15 @@
         padding: 15px;
     }
 </style>
-<h2> Список всіх продаж Юзера </h2>
-
+<h2> Список всіх продаж юзера: <h2 id="usr"></h2> </h2>
+<form th:action="@{/}" method="get" style="margin-bottom:15px">
+<input type="submit" value="Return">
+</form>
 <div id="demo"></div>
 
 <script type="text/javascript"﻿ src="/js/jquery.js"></script>
 
-<script>
+<script >
       var url;
       $.ajax({
             type: "GET",
@@ -35,6 +37,7 @@
             dataType: "text",
             success: function (result) {
                 url = "/get/"+result;
+                document.getElementById("usr").innerHTML = result;
                 $.ajax({
         type: "GET",
         url: url,
