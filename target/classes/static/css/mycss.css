@@ -1,0 +1,161 @@
+* {
+    margin: 0 auto;
+}
+#mainDiv {
+    border: 2px solid blue;
+    width: 700px;
+    height: 650px;
+    background-color: aqua;
+    position: relative;
+}
+.menuBlock {
+    float: left;
+    background-color: snow;
+    width: 60%;
+    height: 550px;
+    margin: 10px;
+    overflow-x:hidden;
+    overflow-y: auto ;
+}
+.headers {
+    background-color: snow;
+    float: left;
+    width: 25%;
+    margin: 1px;
+    padding: 1px;
+    text-align: left;
+    font-size:20px;
+    border-bottom: 1px black;
+}
+.checkBlock {
+    background-color: snow;
+    float: left;
+    width: 30%;
+    height: 450px;
+    margin: 10px;
+    position: relative;
+}
+
+ul {
+    clear:both;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+}
+li {
+    all: unset;
+    list-style: none;
+    display: inline-block;
+    width: 50%;
+    float: left;
+}
+#buttons li div {
+    background-color: snow;
+    display: block;
+    text-align: center;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 15px;
+    height: 55px;
+    line-height: 1.5;
+}
+
+li a:hover {
+    text-decoration: none;
+    color: #000000;
+    background-color: #33B5E5;
+}
+#checkList li {
+    all:unset;
+    height: auto;
+    list-style: none;
+    width: 100%;
+    height: 80%;
+}
+#checkNumb,#menuNumb {
+    float: left;
+    width: 25%;
+}
+.bottomButtons {
+    margin-top: 80px;
+    float: left;
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+}
+.bottomButtonsl{
+    background-color: snow;
+    margin-right: 5%
+}
+.bottomButtonsr{
+    background: lightgreen;
+    margin-left: 5%
+}
+#checkList {
+    overflow-x:hidden;
+    overflow-y: auto ;
+    background-color: snow;
+    height: 78.5%;
+}
+#checkList li div{
+    background-color: snow;
+    display: block;
+    color: black;
+    text-align: center;
+    border-top: 1px  solid #ddd;
+    border-bottom: 1px  solid #ddd;
+    text-align: left;
+    padding: 5px 10px;
+    height: 40px;
+    line-height:1.2;
+}
+#summary{
+    text-align: center;
+    background-color: orange;
+    line-height: 3.5;
+    height: 15%;
+    width: 98.5%;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    border: 2px solid black;
+}
+
+#NewsTicker {
+    height: 300px;
+    width: 300px;
+    background-color: green;
+    color: black;
+}
+
+.productName:after {
+    display:inline-block;
+    position:absolute;
+}
+
+.productName{
+    display:block;
+    height:auto;
+    position:relative;
+    left: 0px;
+    width:110px;
+    float: left;
+}
+.productPrice {
+    width: 60px;
+    height: 30px;
+    float: left;
+}
+#userLogin {
+    padding-left: 50px;
+    padding-top: 10px;
+    text-align:left;
+}
+#singout{
+    position:absolute;
+    right: 25px;
+    top: 10px;
+}
+
+
+

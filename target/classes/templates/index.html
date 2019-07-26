@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+
+<head>
+    <title>Кафешка</title>
+    <link rel="stylesheet" href="/css/mycss.css"></link>
+</head>
+<body>
+
+<div id="mainDiv">
+    <form th:action="@{/logout}" method="post" id="singout">
+        <input type="submit" value="Sign Out"/>
+    </form>
+    <div id="userName"></div>
+    <div class="checkBlock">
+        <div class="headers"> Чек </div>
+        <div id="checkNumb" class="headers"></div>
+
+        <ul id="checkList">
+        </ul>
+
+        <div id="summary"> Сума: </div>
+        <button class="bottomButtons bottomButtonsl"><b>Local</b></button>
+        <button class="bottomButtons bottomButtonsr"><b>Pay</b></button>
+    <div>
+
+        <form th:action="@{/list}" method="get"
+              style="float: left; margin-top: 15px" />
+            <input type="submit" value="Get all orders">
+        </form>
+
+    </div>
+</div>
+
+
+    <div class="menuBlock">
+        <div class="headers">Меню</div>
+        <div id="menuNumb" class="headers"></div>
+
+        <ul id="buttons" >
+
+        </ul>
+    </div>
+
+
+</div>
+
+<script type="text/javascript"﻿ src="/js/jquery.js"></script>
+<script type="text/javascript"﻿ src="/js/database.js"></script>
+
+</body>
+</html>
