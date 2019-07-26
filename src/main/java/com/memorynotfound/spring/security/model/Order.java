@@ -2,18 +2,57 @@ package com.memorynotfound.spring.security.model;
 
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Table(name = "orders")
 public class Order {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String userName;
+    private String orderDate;
+    private String products;
+    private String lastPrice;
 
-    private Date order_date;
-    private double last_price;
-    private int user_id;
-    private int product_id;
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getProducts() {
+        return products;
+    }
+
+    public void setProducts(String products) {
+        this.products = products;
+    }
+
+    public String getLastPrice() {
+        return lastPrice;
+    }
+
+    public void setLastPrice(String lastPrice) {
+        this.lastPrice = lastPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "userName='" + userName + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", products='" + products + '\'' +
+                ", lastPrice='" + lastPrice + '\'' +
+                '}';
+    }
 }

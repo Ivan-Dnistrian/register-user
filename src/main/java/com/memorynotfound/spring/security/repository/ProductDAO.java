@@ -7,5 +7,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository("Product")
 public interface ProductDAO extends JpaRepository<Product,Integer>{
-
 }

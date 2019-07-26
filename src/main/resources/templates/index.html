@@ -2,6 +2,8 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+
 <head>
     <title>Кафешка</title>
     <link rel="stylesheet" href="/css/mycss.css"></link>
@@ -9,11 +11,14 @@
 <body>
 
 <div id="mainDiv">
+    <div id="userName"></div>
     <div class="checkBlock">
         <div class="headers"> Чек </div>
         <div id="checkNumb" class="headers"></div>
 
-        <ul id="checkList"> </ul>
+        <ul id="checkList">
+
+        </ul>
 
         <div id="summary"> Сума: </div>
         <button class="bottomButtons bottomButtonsl"><b>Local</b></button>
@@ -25,19 +30,24 @@
         <div id="menuNumb" class="headers"></div>
 
         <ul id="buttons" >
-              <li class="dish"><div>1</div></li>
+
+             <!-- <li class="dish"><div>1</div></li>
               <li class="dish"><div>2</div></li>
               <li class="dish"><div>3</div></li>
               <li class="dish"><div>4</div></li>
-              <li class="dish"><div>5</div></li>
+              <li class="dish"><div>5</div></li>-->
 
         </ul>
     </div>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Sign Out"/>
     </form>
+    <form th:action="@{/list}" method="get">
+        <input type="submit" value="All">
+    </form>
 
 </div>
+
 <script type="text/javascript"﻿ src="/js/jquery.js"></script>
 <script type="text/javascript"﻿ src="/js/database.js"></script>
 
