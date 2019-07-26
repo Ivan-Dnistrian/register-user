@@ -22,9 +22,8 @@ public class OrderMakerController {
          System.out.println(order);
     }
 
-
-        @GetMapping("/list")
-     public Iterable<Order> list() {
+    @GetMapping("/get")
+    public Iterable<Order> list() {
         return orderService.list();
     }
 }

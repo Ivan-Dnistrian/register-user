@@ -19,6 +19,11 @@ public class MainController {
         return "login";
     }
 
+    @GetMapping("/list")
+    public String list(Model model) {
+        return "list";
+    }
+
     @GetMapping(value = "/username")
     @ResponseBody
     public String currentUserName(Authentication authentication) {

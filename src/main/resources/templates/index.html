@@ -17,12 +17,18 @@
         <div id="checkNumb" class="headers"></div>
 
         <ul id="checkList">
-
         </ul>
 
         <div id="summary"> Сума: </div>
         <button class="bottomButtons bottomButtonsl"><b>Local</b></button>
         <div class="bottomButtons bottomButtonsr"><b>Pay</b></div>
+
+        <form th:action="@{/logout}" method="post" style="float: left">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        <form th:action="@{/list}" method="get" style="float: left">
+            <input type="submit" value="All">
+        </form>
     </div>
 
     <div class="menuBlock">
@@ -39,12 +45,7 @@
 
         </ul>
     </div>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
-    <form th:action="@{/list}" method="get">
-        <input type="submit" value="All">
-    </form>
+
 
 </div>
 

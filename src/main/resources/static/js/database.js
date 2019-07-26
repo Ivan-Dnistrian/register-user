@@ -67,10 +67,7 @@ $.ajax({
     }
 });
 
-/*
-ось тут я пробую брати li, які генерують на сторінці, зліва де Чек ID цього списку checkList, в мене клонується
-елементи з списку товарів я їх запихаю в дівку а потім в лішку, аякс запит вище
-*/
+
 $(".bottomButtonsr").on("click", function () {
     var url = "/save";  // to fix
     var sum = priceGenerator();
@@ -78,7 +75,7 @@ $(".bottomButtonsr").on("click", function () {
     var prodList =[];
     $("#checkList div").find(".productName").each(function()
     {
-       prodList=$(this).text()+", " +prodList;
+       prodList=$(this).text()+", "+prodList;
     });
     let username = $("#userName b").text();
         item ["products"] = prodList;
@@ -111,7 +108,7 @@ $.ajax({
         dataType: "text",
         success: function (result) {
             console.log(result);
-            $("#userName").append('<div>'+"Ви залогінені під іменем: " + '<b>'+ result+'</b>'+'</div>');
+            $("#userName").append('<div id="userLogin">'+"Ви залогінені під іменем: " + '<b>'+ result+'</b>'+'</div>');
         }
         });
 
