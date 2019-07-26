@@ -5,6 +5,8 @@ import com.memorynotfound.spring.security.repository.OrderDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class OrderService {
@@ -12,5 +14,9 @@ public class OrderService {
         OrderDAO orderDAO;
     public Iterable<Order> list() {
         return orderDAO.findAll();
+    }
+
+    public List<Order> findAll(String name) {
+        return orderDAO.findByUserName(name);
     }
 }

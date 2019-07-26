@@ -11,6 +11,9 @@
 <body>
 
 <div id="mainDiv">
+    <form th:action="@{/logout}" method="post" id="singout">
+        <input type="submit" value="Sign Out"/>
+    </form>
     <div id="userName"></div>
     <div class="checkBlock">
         <div class="headers"> Чек </div>
@@ -21,27 +24,23 @@
 
         <div id="summary"> Сума: </div>
         <button class="bottomButtons bottomButtonsl"><b>Local</b></button>
-        <div class="bottomButtons bottomButtonsr"><b>Pay</b></div>
+        <button class="bottomButtons bottomButtonsr"><b>Pay</b></button>
+    <div>
 
-        <form th:action="@{/logout}" method="post" style="float: left">
-            <input type="submit" value="Sign Out"/>
+        <form th:action="@{/list}" method="get"
+              style="float: left; margin-top: 15px" />
+            <input type="submit" value="Get all orders">
         </form>
-        <form th:action="@{/list}" method="get" style="float: left">
-            <input type="submit" value="All">
-        </form>
+
     </div>
+</div>
+
 
     <div class="menuBlock">
         <div class="headers">Меню</div>
         <div id="menuNumb" class="headers"></div>
 
         <ul id="buttons" >
-
-             <!-- <li class="dish"><div>1</div></li>
-              <li class="dish"><div>2</div></li>
-              <li class="dish"><div>3</div></li>
-              <li class="dish"><div>4</div></li>
-              <li class="dish"><div>5</div></li>-->
 
         </ul>
     </div>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      >
+>
 <meta charset="utf-8"/>
 <body>
 <style>
@@ -28,9 +28,16 @@
 <script type="text/javascript"﻿ src="/js/jquery.js"></script>
 
 <script>
-    $.ajax({
+      var url;
+      $.ajax({
+            type: "GET",
+            url: "/username",
+            dataType: "text",
+            success: function (result) {
+                url = "/get/"+result;
+                $.ajax({
         type: "GET",
-        url: "/get",
+        url: url,
         dataType: "json",
         success: function (result) {
             var col = [];
@@ -69,9 +76,13 @@
             divContainer.innerHTML = "";
             divContainer.appendChild(table);
 
-            console.log(result);
+         //   console.log(result);
         }
-    });
+
+            })
+    }});
+
+
 
 </script>
 

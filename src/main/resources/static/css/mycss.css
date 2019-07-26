@@ -4,7 +4,7 @@
 #mainDiv {
     border: 2px solid blue;
     width: 700px;
-    height: 600px;
+    height: 650px;
     background-color: aqua;
     position: relative;
 }
@@ -80,16 +80,15 @@ li a:hover {
     margin-top: 80px;
     float: left;
     border: 1px solid black;
-    width: 44%;
-    height: 15%;
-
+    width: 80px;
+    height: 80px;
 }
 .bottomButtonsl{
     background-color: snow;
     margin-right: 5%
 }
 .bottomButtonsr{
-    background: forestgreen;
+    background: lightgreen;
     margin-left: 5%
 }
 #checkList {
@@ -151,6 +150,11 @@ li a:hover {
     padding-left: 50px;
     padding-top: 10px;
     text-align:left;
+}
+#singout{
+    position:absolute;
+    right: 25px;
+    top: 10px;
 }
 
 

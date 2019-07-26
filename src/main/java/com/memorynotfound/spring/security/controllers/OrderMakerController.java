@@ -21,9 +21,13 @@ public class OrderMakerController {
         orderDAO.save(order);
          System.out.println(order);
     }
-
-    @GetMapping("/get")
+  /*  @GetMapping("/get")
     public Iterable<Order> list() {
         return orderService.list();
+    }*/
+
+    @GetMapping("/get/{result}")
+    public Iterable<Order> find(@PathVariable( "result") String username){
+        return orderService.findAll(username);
     }
 }
