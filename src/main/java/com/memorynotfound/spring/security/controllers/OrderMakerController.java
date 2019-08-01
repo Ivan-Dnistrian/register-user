@@ -27,7 +27,8 @@ public class OrderMakerController {
     }*/
 
     @GetMapping("/get/{result}")
-    public Iterable<Order> find(@PathVariable( "result") String username){
+    public Iterable<Order> find(
+            @PathVariable( "result") String username){
         return orderService.findAll(username);
     }
 }

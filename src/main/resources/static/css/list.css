@@ -14,5 +14,26 @@ table {
 th, td {
     padding: 15px;
 }
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
 
+    40% {
+        transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    80% {
+        transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+th {
+    cursor: pointer;
+}
+th:hover {
+    animation: bounce 1s;
+}
 

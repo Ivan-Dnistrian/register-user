@@ -87,6 +87,13 @@ $( "#buttons" ).on("click",function(e) {
     document.getElementById('checkList').appendChild(li);
     priceGenerator();
     counter();
+    //sorting
+    var mylist = $('#checkList');
+    var listitems = mylist.children('li').get();
+    listitems.sort(function(a, b) {
+        return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+    });
+    $.each(listitems, function(idx, itm) { mylist.append(itm); });
 
 });
 

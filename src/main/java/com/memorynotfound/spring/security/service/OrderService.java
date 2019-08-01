@@ -11,13 +11,13 @@ import java.util.List;
 @Service
 public class OrderService {
     @Autowired
-        OrderDAO orderDAO;
+    OrderDAO orderDAO;
+
     public Iterable<Order> list() {
         return orderDAO.findAll();
     }
 
     public List<Order> findAll(String name) {
-
         return orderDAO.findByUserName(name);
     }
 }
