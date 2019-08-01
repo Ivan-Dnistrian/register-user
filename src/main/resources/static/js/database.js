@@ -47,35 +47,50 @@ $( "#buttons" ).on("click",function(e) {
     li.appendChild(dishName);
     li.classList.add('order');
 
-    li.addEventListener('click', function(e) {
-        let txt = $(e.target).parent().text();
+    li.addEventListener('click', function(e){
+       let txt='';
+         txt = $(e.target).parent().text();
 
          $(e.target).attr("href","#deleteModal");
             $(e.target).parent().attr("href","#deleteModal");
 
-        $("#delete").click(function() {
-            $(e.target).parent().remove();
+        $("#del").html('Для видалення: '+ txt);
+
+        $("#delete").on("click", function() {
+
+                $(e.target).parent().remove();
             counter();
+            console.log(this);
+
         });
-         /*var a = document.getElementsByClassName('order'); //or grab it by tagname etc
-             a.href = "#deleteModal";
-        if (confirm('Do you want delete '+'" ' + txt + ' "' +' from check' )) {
-            $(e.target).parent().remove();
-            counter();
-        }
-        else {
-            alert ( "You pressed Cancel!");
-        }*/
-});
+
+        $("#cancel").click(function() {
+            $("#checkList li, li a,span").each(function()
+            {
+               /* var href = $(this).removeAttr('href');*/
+                $(e.target).parent().removeAttr('href');
+                txt='';
+            });
+        });
+
+        /*
+           if (confirm('Do you want delete '+'" ' + txt + ' "' +' from check' )) {
+               $(e.target).parent().remove();
+               counter();
+           }
+           else {
+               alert ( "You pressed Cancel!");
+           }
+        */
+
+    });
     document.getElementById('checkList').appendChild(li);
     priceGenerator();
     counter();
+
 });
 
 
-function refreshPage(){
-    window.location.reload();
-}
 
 
 $(".pay").on("click", function () {
@@ -85,7 +100,7 @@ $(".pay").on("click", function () {
     var prodList =[];
     $("#checkList a").find(".productName").each(function()
     {
-       prodList=$(this).text()+", "+prodList;
+       prodList=$(this).text()+" "+prodList;
     });
     let username = $("#userName b").text();
         item ["products"] = prodList;
@@ -112,7 +127,7 @@ $(".pay").on("click", function () {
 
 
   let  html_to_append = '<div style="margin: 0 auto">'+ '<p style=" margin-bottom: 15px">'+ 'Ви здійснили успішно оплату' +'</p>'+
-      '<a class="btn" type="submit" style="background-color: green; margin-left: 43px" href="/">' + 'Натисніть щоб повернутись' + '</a>'+ '</div>';
+      '<a class="btn" type="submit" style="background-color: green;" href="/">' + 'Натисніть, щоб повернутись' + '</a>'+ '</div>';
     $(".content").html(html_to_append);
 
 

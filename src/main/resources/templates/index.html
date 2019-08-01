@@ -25,10 +25,10 @@
         <a class="buttons bottomButtonsr" href="#payModal">Pay</a>
     <div>
 
-        <form th:action="@{/list}" method="get"
-              style="float: left; margin-top: 15px" />
-            <input type="submit" value="Get all orders">
-        </form>
+        <a href="/list" method="get"
+              class="btn"
+              style="float: left; margin-top: 15px" type="submit" >Get all orders
+        </a>
 
     </div>
 </div>
@@ -55,9 +55,9 @@
     <div id="deleteModal" class="overlay">
         <div class="modal">
             <div class="content">
-                <p>Для видалення</p>
-                <a class='btn close-modal '  href="#">Відміна</a>
+                <p id="del">Для видалення: </p>
                 <a class='btn close-modal' id="delete" style="background-color: red" href="#">Видалити</a>
+                <a class='btn close-modal' id="cancel"  href="#">Відміна</a>
             </div>
         </div>
     </div>

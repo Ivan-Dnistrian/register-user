@@ -2,92 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
 >
 <meta charset="utf-8"/>
+<head>
+<link rel="stylesheet" href="/css/list.css"></link>
+</head>
 <body>
-<style>
-    div{
-        width: 700px;
-    }
-    table, td, th {
-        border: 1px solid #ddd;
-        text-align: left;
-    }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        padding: 15px;
-    }
-</style>
-<h2> Список всіх продаж юзера: <b id="usr"></b> </h2>
+<h2> Список всіх продаж юзера: <b id="usr"> </b></h2>
 <form th:action="@{/}" method="get" style="margin-bottom:15px">
 <input type="submit" value="Return">
 </form>
 <div id="demo"></div>
-
 <script type="text/javascript" src="/js/jquery.js"></script>
-
-<script >
-      var url;
-      $.ajax({
-            type: "GET",
-            url: "/username",
-            dataType: "text",
-            success: function (result) {
-                url = "/get/"+result;
-                document.getElementById("usr").innerHTML = result;
-                $.ajax({
-        type: "GET",
-        url: url,
-        dataType: "json",
-        success: function (result) {
-            var col = [];
-            for (var i = 0; i < result.length; i++) {
-                for (var key in result[i]) {
-                    if (col.indexOf(key) === -1) {
-                        col.push(key);
-                    }
-                }
-            }
-            var table = document.createElement("table");
-
-            // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-
-            var tr = table.insertRow(-1);                   // TABLE ROW.
-
-            for (var i = 0; i < col.length; i++) {
-                var th = document.createElement("th");      // TABLE HEADER.
-                th.innerHTML = col[i];
-                tr.appendChild(th);
-            }
-
-            // ADD JSON DATA TO THE TABLE AS ROWS.
-            for (var i = 0; i < result.length; i++) {
-
-                tr = table.insertRow(-1);
-
-                for (var j = 0; j < col.length; j++) {
-                    var tabCell = tr.insertCell(-1);
-                    tabCell.innerHTML = result[i][col[j]];
-                }
-            }
-
-            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-            var divContainer = document.getElementById("demo");
-            divContainer.innerHTML = "";
-            divContainer.appendChild(table);
-
-         //   console.log(result);
-        }
-
-            })
-    }});
-
-
-
-</script>
+<script type="text/javascript"﻿ src="/js/list.js"></script>
 
 </body>
 </html>

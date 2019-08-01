@@ -18,19 +18,17 @@
     <div class="checkBlock">
         <div class="headers"> Чек </div>
         <div id="checkNumb" class="headers"></div>
-
-        <ul id="checkList">
-        </ul>
-
+        <ul id="checkList"></ul>
         <div id="summary"> Сума: </div>
-        <button class="bottomButtons bottomButtonsl"><b>Local</b></button>
-        <button class="bottomButtons bottomButtonsr"><b>Pay</b></button>
+
+        <a class="buttons bottomButtonsl" >Local</a>
+        <a class="buttons bottomButtonsr" href="#payModal">Pay</a>
     <div>
 
-        <form th:action="@{/list}" method="get"
-              style="float: left; margin-top: 15px" />
-            <input type="submit" value="Get all orders">
-        </form>
+        <a href="/list" method="get"
+              class="btn"
+              style="float: left; margin-top: 15px" type="submit" >Get all orders
+        </a>
 
     </div>
 </div>
@@ -39,12 +37,30 @@
     <div class="menuBlock">
         <div class="headers">Меню</div>
         <div id="menuNumb" class="headers"></div>
-
         <ul id="buttons" >
-
         </ul>
     </div>
 
+
+    <div id="payModal" class="overlay">
+        <div class="modal">
+            <div class="content">
+                <p>Натисніть на кнопку "Оплата" для підтвердження</p>
+                <button class="pay btn"> Оплата </button>
+                <a class="btn" style="background-color: red" href="#"> Скасувати </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="overlay">
+        <div class="modal">
+            <div class="content">
+                <p id="del">Для видалення: </p>
+                <a class='btn close-modal' id="delete" style="background-color: red" href="#">Видалити</a>
+                <a class='btn close-modal' id="cancel"  href="#">Відміна</a>
+            </div>
+        </div>
+    </div>
 
 </div>
 

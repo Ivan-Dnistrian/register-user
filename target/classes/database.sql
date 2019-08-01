@@ -23,13 +23,15 @@ create table product (
 )DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 CREATE TABLE orders (
-    id int not null,
+    id int not null AUTO_INCREMENT,
                         order_date varchar(255) not null,
                         user_name varchar(255) NOT NULL,
                         last_price varchar(255) NOT NULL,
                         products varchar(255) NOT NULL,
                         primary key (id)
 ) DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+
 
 /*Навпонюємо категорії товарів*/
 INSERT INTO categories(category_id,category_name) VALUES(1,'Безалкогольні напої');
