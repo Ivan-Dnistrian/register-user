@@ -26,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
         return new Sort(Sort.Direction.ASC, "categoryId");
     }
 
+    @Override
     public List<Product> findAll() {
         return productDAO.findAll(sortByCategoryIdAsc());
     }

@@ -60,11 +60,8 @@ $( "#buttons" ).on("click",function(e) {
         $("#del").html('Для видалення: '+ txt);
 
         $("#delete").on("click", function() {
-
                 $(e.target).parent().remove();
             counter();
-            console.log(this);
-
         });
 
         $("#cancel").click(function() {
@@ -103,7 +100,7 @@ $(".pay").on("click", function () {
     var prodList =[];
     $("#checkList a").find(".productName").each(function()
     {
-       prodList=$(this).text()+" "+prodList;
+       prodList=$(this).text()+", "+prodList;
     });
     let username = $("#userName b").text();
         item ["products"] = prodList;
@@ -111,7 +108,7 @@ $(".pay").on("click", function () {
         let date = new Date().toLocaleString();
         item ["orderDate"] = date;
         item ["userName"] = username;
-    console.log(item);
+   // console.log(item);
 
     $.ajax({
         type: 'POST',
@@ -129,8 +126,10 @@ $(".pay").on("click", function () {
 
 
 
-  let  html_to_append = '<div style="margin: 0 auto">'+ '<p style=" margin-bottom: 15px">'+ 'Ви здійснили успішно оплату' +'</p>'+
-      '<a class="btn" type="submit" style="background-color: green;" href="/">' + 'Натисніть, щоб повернутись' + '</a>'+ '</div>';
+  let  html_to_append = '<div style="margin: 0 auto">'+ '<p style=" margin-bottom: 15px">'+
+      'Ви здійснили успішно оплату' +'</p>'+
+      '<a class="btn" type="submit" style="background-color: green;" href="/">' +
+      'Натисніть, щоб повернутись' + '</a>'+ '</div>';
     $(".content").html(html_to_append);
 
 
@@ -144,7 +143,8 @@ $.ajax({
         dataType: "text",
         success: function (result) {
             console.log(result);
-            $("#userName").append('<div id="userLogin">'+"Ви залогінені під іменем: " + '<b>'+ result+'</b>'+'</div>');
+            $("#userName").append('<div id="userLogin">'+
+                "Ви залогінені під іменем: " + '<b>'+ result+'</b>'+'</div>');
         }
         });
 
