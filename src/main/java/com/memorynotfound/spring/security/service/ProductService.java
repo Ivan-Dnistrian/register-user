@@ -6,7 +6,6 @@ import com.memorynotfound.spring.security.model.Product;
 import java.util.List;
 
 public interface ProductService {
-
     public List<Product> getAllProducts();
-
+    public List<Product> findAll();
 }

@@ -3,6 +3,7 @@ package com.memorynotfound.spring.security.service;
 import com.memorynotfound.spring.security.model.Product;
 import com.memorynotfound.spring.security.repository.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,4 +21,15 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getAllProducts() {
         return productDAO.findAll();
     }
+
+    private Sort sortByCategoryIdAsc() {
+        return new Sort(Sort.Direction.ASC, "categoryId");
+    }
+
+    public List<Product> findAll() {
+        return productDAO.findAll(sortByCategoryIdAsc());
+    }
+
+
+
 }

@@ -17,6 +17,6 @@ public class RestProduct {
 
     @RequestMapping(path = "/pr", method = RequestMethod.GET)
     public List<Product> getAllProducts(){
-        return productService.getAllProducts();
+        return productService.findAll();
     }
 }

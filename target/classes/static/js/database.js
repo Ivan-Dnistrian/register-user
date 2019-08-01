@@ -8,12 +8,15 @@ $.ajax({
         $.each(data, function(i, item) {
             html_to_append +=
                 '<li class="dish">' +'<a>'+
-                '<span class="productName">' + item.product_name + '</span> ' +
+                '<span class="productName">' + item.productName + '</span> ' +
                 '<span class="productPrice">' +  item.price   +' грн' +'</span>' + '</a>' +
+                //'<span class="productPrice">' +  item.categoryId   +' id' +'</span>' + '</a>'+
                 '</li>';
         });
+
         $("#buttons").html(html_to_append);
-        document.getElementById('menuNumb').innerHTML = '( ' + $("#buttons").find(".productName").length +' )';
+        document.getElementById('menuNumb').innerHTML =
+            '( ' + $("#buttons").find(".productName").length +' )';
     },
     error: function() {
         console.log(data);

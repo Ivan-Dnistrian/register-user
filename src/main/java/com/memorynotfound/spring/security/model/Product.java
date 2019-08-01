@@ -14,13 +14,13 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="product_id")
-    public int product_id;
+    public int productId;
     @Column(name="product_name")
-    public String product_name;
+    public String productName;
     @Column(name="price")
     public double price;
     @Column(name="category_id")
-    public int category_id;
+    public int categoryId;
 
     public Product() {
     }
