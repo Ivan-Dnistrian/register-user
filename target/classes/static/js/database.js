@@ -4,7 +4,7 @@ $.ajax({
     dataType: 'json',
     success: function(data) {
         console.log(typeof(data));
-        var html_to_append = '';
+        let html_to_append = '';
         $.each(data, function(i, item) {
             html_to_append +=
                 '<li class="dish">' +'<a>'+
@@ -25,9 +25,9 @@ $.ajax({
 
 
 function priceGenerator() {
-    var sum = 0;
+    let sum = 0;
     $("#checkList").find(".productPrice").each(function() {
-        var val = $.trim( $(this).text() );
+        let val = $.trim( $(this).text() );
         if ( val ) {
             val = parseFloat( val.replace( /грн\^/, "" ) );
             sum += !isNaN( val ) ? val : 0;
@@ -50,28 +50,16 @@ $( "#buttons" ).on("click",function(e) {
     li.appendChild(dishName);
     li.classList.add('order');
 
-    li.addEventListener('click', function(e){
-       let txt='';
-         txt = $(e.target).parent().text();
-
-         $(e.target).attr("href","#deleteModal");
-            $(e.target).parent().attr("href","#deleteModal");
-
-        $("#del").html('Для видалення: '+ txt);
-
-        $("#delete").on("click", function() {
-                $(e.target).parent().remove();
-            counter();
-        });
-
-        $("#cancel").click(function() {
-            $("#checkList li, li a,span").each(function()
-            {
-               /* var href = $(this).removeAttr('href');*/
-                $(e.target).parent().removeAttr('href');
-                txt='';
-            });
-        });
+    document.getElementById('checkList').appendChild(li);
+    priceGenerator();
+    counter();
+    //sorting
+    let mylist = $('#checkList');
+    let listitems = mylist.children('li').get();
+    listitems.sort(function(a, b) {
+        return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+    });
+    $.each(listitems, function(idx, itm) { mylist.append(itm); });
 
         /*
            if (confirm('Do you want delete '+'" ' + txt + ' "' +' from check' )) {
@@ -84,27 +72,35 @@ $( "#buttons" ).on("click",function(e) {
         */
 
     });
-    document.getElementById('checkList').appendChild(li);
-    priceGenerator();
-    counter();
-    //sorting
-    var mylist = $('#checkList');
-    var listitems = mylist.children('li').get();
-    listitems.sort(function(a, b) {
-        return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
-    });
-    $.each(listitems, function(idx, itm) { mylist.append(itm); });
 
+$( "#checkList" ).on("click",function(e)  {
+    let txt = '';
+    txt = $(e.target).parent().text();
+    $(e.target).attr("href", "#deleteModal");
+    $(e.target).parent().attr("href", "#deleteModal");
+    $("#del").html('Для видалення: ' + txt);
+
+    $("#delete").on("click", function() {
+        $(e.target).parent().remove();
+        counter();
+    });
+
+    $("#cancel").click(function() {
+        $("#checkList li, li a,span").each(function () {
+            $(e.target).parent().removeAttr('href');
+            txt = '';
+            e.target = null;
+        });
+    });
 });
 
 
 
-
 $(".pay").on("click", function () {
-    var url = "/save";  // to fix
-    var sum = priceGenerator();
-    var item = {};
-    var prodList =[];
+    let url = "/save";  // to fix
+    let sum = priceGenerator();
+    let item = {};
+    let prodList =[];
     $("#checkList a").find(".productName").each(function()
     {
        prodList=$(this).text()+", "+prodList;
